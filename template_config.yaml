@@ -1,0 +1,16 @@
+###
+### このファイルをコピーするかリネームして config.yaml を作成してください
+###
+
+# サーバーのポート番号
+serverPort: 4567
+
+# 任意のシークレットキー(GitHubのSecret欄に同じものを入力)
+secretKey: ''
+
+# 対象リポジトリ名
+repositoryName: ''
+
+# push検知時に実行するスクリプトのパス
+# 引数にコミットデータがJsonで渡されます
+scriptPath: ''
