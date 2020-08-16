@@ -13,7 +13,7 @@ export const RunRcon = async (commits: CommitData[], conf: Config['rcon']): Prom
 
         const json: { [key: string]: unknown }[] = [
             { text: '' },
-            { text: 'Datapackに更新がありました\\n', bold: true },
+            { text: 'Datapackに更新がありました\n', bold: true },
             { text: 'Commits: ' }
         ];
 
