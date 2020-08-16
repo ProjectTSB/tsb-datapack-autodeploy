@@ -1,6 +1,13 @@
 export type Config = {
     serverPort: number;
-    secretKey: string;
-    repositoryName: string;
-    scriptPath: string;
+    repositoryPath: string;
+    github: {
+        repositoryName: string;
+        secretKey: string;
+    };
+    rcon: {
+        host: string;
+        port: number;
+        password: string;
+    };
 };
