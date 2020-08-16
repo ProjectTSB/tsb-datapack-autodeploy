@@ -28,6 +28,7 @@ export const RunRcon = async (commits: CommitData[], conf: Config['rcon']): Prom
         }
 
         await rcon.send(`tellraw @a ${JSON.stringify(json)}`);
+        await rcon.send('minecraft:reload');
         await rcon.end();
     }
     catch {
