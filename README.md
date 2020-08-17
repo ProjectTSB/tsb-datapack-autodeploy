@@ -18,3 +18,7 @@ yarn
 yarn compile
 yarn start
 ```
+
+## ライセンス
+
+[MIT](/LICENSE)
