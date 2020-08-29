@@ -14,17 +14,23 @@ export const RunRcon = async (commits: CommitData[], conf: Config['rcon']): Prom
         const json: { [key: string]: unknown }[] = [
             { text: '' },
             { text: 'Datapackに更新がありました\n', bold: true },
-            { text: 'Commits: ' }
+            { text: '最新: ' },
+            {
+                text: commits[0].id,
+                color: '#0077cc',
+                italic: true,
+                clickEvent: { action: 'open_url', value: commits[0].url },
+                hoverEvent: { action: 'show_text', contents: `${commits[0].message} - ${commits[0].name}` }
+            }
         ];
 
-        for (const commit of commits) {
-            json.push({
-                text: commit.id,
-                color: '#0077cc',
-                clickEvent: { action: 'open_url', value: commit.url },
-                hoverEvent: { action: 'show_text', contents: `${commit.message} - ${commit.name}` }
-            });
-            json.push({ text: ' ' });
+        if (commits.length > 1) {
+            json.push(
+                {
+                    text: `\n他${commits.length - 1}件のコミット`,
+                    color: '#aaaaaa'
+                }
+            );
         }
 
         await rcon.send(`tellraw @a ${JSON.stringify(json)}`);
