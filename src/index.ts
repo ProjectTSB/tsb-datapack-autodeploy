@@ -43,7 +43,7 @@ handler.on('push', async (ev: PushEvent) => {
             };
         });
 
-        await git(conf.repositoryPath).pull();
+        await git(conf.repositoryPath).pull('origin', branch, ['--prune']);
         await RunRcon(commits, conf.rcon);
     }
 });
